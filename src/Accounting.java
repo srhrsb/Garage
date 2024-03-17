@@ -12,6 +12,7 @@ public class Accounting {
         //nein nicht genug Geld
         return false;
     }
+
     public void addMoney( double amount ){
         cash += amount;
     }
