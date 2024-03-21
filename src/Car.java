@@ -52,4 +52,6 @@ public class Car {
     public int getPrice(){
         return this.price;
     }
+
+    public String getBrand(){ return this.brand; }
 }

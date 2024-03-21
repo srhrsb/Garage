@@ -26,6 +26,22 @@ public class CarMarket {
         return cars; //Objekt cars zurückgeben
     }
 
+    /**
+     * Get Car - gibt ein Object eines Autos mit gegebener Marke zurück
+     * @param brand String Marke des Autos
+     * @return gibt eine Object dieses Autotyps zurück oder null
+     */
+    public Car getCar(String brand){
+        for (Car car : cars){
+            if( car.getBrand() == brand) {
+               return car;
+            }
+        }
+
+        return null;
+    }
+
+
 //Alternativ:
 //    public Car[] initCars(){
 //        // ein Array, das 3 Objekte vom Typen Car speichern soll, deklarieren
