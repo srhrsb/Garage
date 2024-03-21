@@ -13,19 +13,35 @@ public class Garage {
         //Carmarket Objekt erzeugen und in Feld speichern
         market = new CarMarket();
 
-        Car car = market.getCar("Volvo");
-        System.out.println("Auto geholt " + car.getBrand());
+        Car car = buyCar("Volvo");
+        if(car != null) {
+            System.out.println("Auto wurde gekauft: " + car.getBrand()
+                    + " für " + car.getPrice() + " und hat " + car.getSeats() + " Sitze");
+        }
+        else
+        {
+            System.out.println("Kein Auto gekauft.");
+        }
 
-        Car car3 = market.getCar("Volvo");
-        System.out.println("Auto geholt " + car3.getBrand());
-
-
-
-
-        Car car2 = market.getCar("Honda");
-        System.out.println("Auto geholt " + car2.getBrand());
+        System.out.println("Kasse: "+ accounting.getBalance());
     }
 
+    /**
+     * Buy Car - prüft ob genug Geld vorhanden ist und kauft das mit brand gegebene Auto
+     * und gibt es anschließend zurück
+     */
+    private Car buyCar(String brand){
+
+        double price = market.getPriceOfCar(brand);
+
+        if(price > 0 && accounting.withdrawMoney(price)){
+
+            //es ist Geld da bzw. wurde schon abgezogen, Auto kann geholt werden
+         return market.getCar(brand);
+        }
+
+        return null;
+    }
 
 
 

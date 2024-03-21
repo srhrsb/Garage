@@ -41,6 +41,15 @@ public class CarMarket {
         return null;
     }
 
+    public double getPriceOfCar(String brand){
+        for (Car car : cars){
+            if( car.getBrand() == brand) {
+                return car.getPrice();
+            }
+        }
+        return 0d;
+    }
+
 
 //Alternativ:
 //    public Car[] initCars(){
