@@ -17,6 +17,8 @@ public class Garage {
         if(car != null) {
             System.out.println("Auto wurde gekauft: " + car.getBrand()
                     + " für " + car.getPrice() + " und hat " + car.getSeats() + " Sitze");
+
+            System.out.println("Im Markt sind jetzt noch "+market.getCarCount()+ " Autos erhältlich");
         }
         else
         {
@@ -35,9 +37,8 @@ public class Garage {
         double price = market.getPriceOfCar(brand);
 
         if(price > 0 && accounting.withdrawMoney(price)){
-
             //es ist Geld da bzw. wurde schon abgezogen, Auto kann geholt werden
-         return market.getCar(brand);
+            return market.buyCar(brand);
         }
 
         return null;

@@ -32,17 +32,7 @@ public class Car {
     }
 
     public void setSeats( int seats ){
-
-        //ToDo mit Clamp wäre das besser, später umbauen
-        if(seats > 8){
-            this.seats = 8;
-        }
-        else if(seats < 2 ){
-            this.seats = 2;
-        }
-        else{
-            this.seats = seats;
-        }
+        this.seats = Math.clamp(seats, 2, 8);
     }
 
     public int getSeats(){
@@ -54,4 +44,16 @@ public class Car {
     }
 
     public String getBrand(){ return this.brand; }
+
+
+    /**
+     * Tune - verbessert das Auto und gibt die Kosten des Tunings zurück
+     * @return Int cost
+     */
+    public int tune(){
+        horsePower += 10;
+        int cost = 300;
+        price += cost;
+        return cost;
+    }
 }
