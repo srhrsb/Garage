@@ -56,4 +56,8 @@ public class Car {
         price += cost;
         return cost;
     }
+
+    public int getTuningCosts(){
+        return 300;
+    }
 }
