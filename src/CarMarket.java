@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CarMarket {
 
@@ -80,10 +81,48 @@ public class CarMarket {
         return 0d;
     }
 
+    private void addCarFromInput(){
 
-//Alternativ:
+         Scanner scanner = new Scanner(System.in);
+         System.out.println("Neues Auto (Marke, Leistung, Gewicht): ");
+         String input = scanner.nextLine();
+
+         var command = input.split(",");
+         if(command.length == 3){
+             cars.add( new Car(command[0],
+                           Integer.parseInt(command[1]),
+                           Integer.parseInt(command[2])
+                     )
+             );
+         }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Alternativ:
+
+
+
+
 //    public Car[] initCars(){
 //        // ein Array, das 3 Objekte vom Typen Car speichern soll, deklarieren
+
+
+
 //        Car[] cars = {
 //         new Car("Trabant", 26, 700),
 //         new Car("Volvo", 99, 1700),
