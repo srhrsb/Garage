@@ -12,6 +12,7 @@ public class CarMarket {
 
     public CarMarket(){
         cars = initCars();
+        addCarFromInput();
     }
 
     /**
@@ -90,12 +91,11 @@ public class CarMarket {
          var command = input.split(",");
          if(command.length == 3){
              cars.add( new Car(command[0],
-                           Integer.parseInt(command[1]),
-                           Integer.parseInt(command[2])
+                           Integer.parseInt( command[1].trim() ),
+                           Integer.parseInt(command[2].trim() )
                      )
              );
          }
-
     }
 
 
